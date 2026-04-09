@@ -5,8 +5,23 @@
 🚀 Founder @ BabyCollab | AI Engineer  
 💻 Building AI-powered products, full-stack apps & automation systems  
 📍 India  
-[![X](https://img.shields.io/badge/X-black?style=flat-square&logo=twitter)](https://x.com/vatsapranav_)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat-square&logo=linkedin)](https://linkedin.com/in/pranavvatsa)
+<p align="center">
+  <a href="https://x.com/vatsapranav_">
+    <img src="https://img.shields.io/badge/X-black?style=for-the-badge&logo=twitter" />
+  </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://linkedin.com/in/pranavvatsa">
+    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin" />
+  </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://itspranavportfolio.vercel.app">
+    <img src="https://img.shields.io/badge/Portfolio-000?style=for-the-badge&logo=vercel" />
+  </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="mailto:pranav.vatsa971@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+</p>
 
 ---
 
@@ -67,15 +82,6 @@ Multi-role marketplace with dashboards & secure auth
 ![Pranav's GitHub stats](https://github-readme-stats-sigma-five.vercel.app/api?username=pranavv05&show_icons=true&theme=tokyonight)
 
 ![Top Langs](https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pranavv05&layout=compact&theme=tokyonight)
-
----
-
-## 🌐 Connect With Me
-
-- 🔗 LinkedIn: https://linkedin.com/in/pranavvatsa  
-- 🌍 Portfolio: https://itspranavportfolio.vercel.app  
-- 📧 Email: pranav.vatsa971@gmail.com
-- 
 
 ---
 
