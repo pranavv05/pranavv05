@@ -5,6 +5,8 @@
 🚀 Founder @ BabyCollab | AI Engineer  
 💻 Building AI-powered products, full-stack apps & automation systems  
 📍 India  
+[![X](https://img.shields.io/badge/X-black?style=flat-square&logo=twitter)](https://x.com/vatsapranav_)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat-square&logo=linkedin)](https://linkedin.com/in/pranavvatsa)
 
 ---
 
@@ -68,17 +70,12 @@ Multi-role marketplace with dashboards & secure auth
 
 ---
 
-## 👀 Profile Views
-
-![](https://komarev.com/ghpvc/?username=pranavv05&label=Profile%20views&color=0e75b6&style=flat)
-
----
-
 ## 🌐 Connect With Me
 
 - 🔗 LinkedIn: https://linkedin.com/in/pranavvatsa  
 - 🌍 Portfolio: https://itspranavportfolio.vercel.app  
-- 📧 Email: pranav.vatsa971@gmail.com  
+- 📧 Email: pranav.vatsa971@gmail.com
+- 
 
 ---
 
