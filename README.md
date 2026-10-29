@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner.svg" alt="Pranav Vatsa. AI agents that know when not to act." width="100%"/>
+  <img src="banner.jpg" alt="Pranav Vatsa." width="100%"/>
 </p>
 
 I build AI agents for Indian businesses, in places like collections, invoicing and compliance, where one wrong action costs real money.
