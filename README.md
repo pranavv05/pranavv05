@@ -33,8 +33,8 @@ This is the architecture of **RecoverRight**. The model can be wrong and the sys
 | **[RecoverRight](https://github.com/pranavv05/recoverright)** | Autonomous B2B receivables-recovery agent. Diagnoses why an invoice is unpaid, acts only if policy allows. | 0 inappropriate actions and 100% hard-stop block rate on held-out data, both runs. 869 tests. [Demo video](https://www.youtube.com/watch?v=s-3B0S9CR_w) |
 | **[Verax TallyOCR](https://github.com/pranavv05/verax)** | Multi-tenant SaaS for Indian CA firms: OCR, LLM extraction, CA review, TallyPrime XML export. | Postgres row-level-security tenant isolation, queued processing with retries, CI, Docker and Render deploys. [Live](https://ca-saas-platform.vercel.app) |
 | **[QueryFix](https://github.com/pranavv05/QueryFix)** | GitHub PR bot that flags slow and unsafe SQL/JPA queries, including cross-file N+1 patterns. | Deterministic rules (same diff, same findings), about 1,000 tests, strict typing. Pilot stage. |
-| **[BabyCollab](https://github.com/pranavv05/babycollab)** | Student collaboration platform I founded: find teammates, run projects, build a portfolio. | Next.js, Prisma, Clerk, deployed. <!-- TODO: add real user / project counts --> |
-| **[Agentic SDD Platform](https://github.com/pranavv05/agenticsdlc)** | Agents that turn a requirement into approved specs with human gates, then hand off to Claude Code over MCP. Team of 4. | <!-- TODO: state exactly which part you built --> |
+| [**BabyCollab**](https://github.com/pranavv05/babycollab) | Student collaboration platform I founded: find teammates, run projects, build a portfolio. | 70+ signups in the first week. Next.js, Prisma, Clerk, deployed. |
+| [**Agentic SDD Platform**](https://github.com/pranavv05/agenticsdlc) | Agents that turn a requirement into approved specs with human gates, then hand off to Claude Code over MCP. | My concept, developed with 3 teammates. |
 
 ---
 
