@@ -1,88 +1,70 @@
-# Hi, I'm Pranav Vatsa 👋
-
-![Typing SVG](https://readme-typing-svg.herokuapp.com?lines=AI+Engineer;Full+Stack+Developer;Founder;Building+Real+World+Products&center=true&width=500&height=50)
-
-🚀 Founder @ BabyCollab | AI Engineer  
-💻 Building AI-powered products, full-stack apps & automation systems  
-📍 India  
 <p align="center">
-  <a href="https://x.com/vatsapranav_">
-    <img src="https://img.shields.io/badge/X-black?style=for-the-badge&logo=twitter" />
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://linkedin.com/in/pranavvatsa">
-    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin" />
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://itspranavportfolio.vercel.app">
-    <img src="https://img.shields.io/badge/Portfolio-000?style=for-the-badge&logo=vercel" />
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="mailto:pranav.vatsa971@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
+  <img src="banner.svg" alt="Pranav Vatsa. AI agents that know when not to act." width="100%"/>
 </p>
 
----
+I build AI agents for Indian businesses, in places like collections, invoicing and compliance, where one wrong action costs real money.
 
-## 🧠 About Me
-
-- 🏗️ Built production-grade AI systems & multi-agent architectures  
-- 🤖 Focused on AI agents, LLMs, and scalable systems  
-- ⚡ Love shipping fast & solving real-world problems  
-- 🚀 Currently building: **Verax TallyOCR (AI SaaS for CA firms)**  
+My rule: **the LLM proposes, deterministic code decides.** Every agent I ship has a policy layer the model cannot talk its way past, and an audit trail for every refusal.
 
 ---
 
-## 🚀 Featured Projects
+## The pattern behind my work
 
-### 🔹 Verax TallyOCR  
-AI SaaS automating accounting workflows (OCR → validation → Tally)
+```mermaid
+flowchart LR
+    A["Overdue invoice"] --> B["LLM diagnoses cause<br/>+ evidence tier"]
+    B --> C{"Policy engine<br/>14 deterministic rules"}
+    C -->|ALLOW| D["Worker executes"]
+    C -->|REQUIRE_HUMAN| E["Human review queue"]
+    C -->|BLOCK| F["Refusal logged"]
+    D --> G[("Audit trail")]
+    E --> G
+    F --> G
+```
 
-### 🔹 Wordsmith  
-AI writing platform with autocomplete + offline desktop (Tauri)
-
-### 🔹 HSK Marketplace  
-Multi-role marketplace with dashboards & secure auth  
-
----
-
-## 💼 Experience
-
-- 🧑‍💻 Founder — BabyCollab  
-- 🤖 AI Engineer Intern — Pinhead Analytics  
-- 🌐 Web Developer Intern — Enjay IT Solutions  
+This is the architecture of **RecoverRight**. The model can be wrong and the system still holds: across two held-out runs, safety metrics did not move while diagnosis accuracy sat around 45%.
 
 ---
 
-## 🛠️ Tech Stack
+## Proof of work
 
-### AI & Backend
-![Python](https://img.shields.io/badge/-Python-black?style=flat-square&logo=python)
-![FastAPI](https://img.shields.io/badge/-FastAPI-black?style=flat-square&logo=fastapi)
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-black?style=flat-square&logo=postgresql)
-![MongoDB](https://img.shields.io/badge/-MongoDB-black?style=flat-square&logo=mongodb)
-
-### Frontend
-![React](https://img.shields.io/badge/-React-black?style=flat-square&logo=react)
-![Next.js](https://img.shields.io/badge/-Next.js-black?style=flat-square&logo=next.js)
-![TypeScript](https://img.shields.io/badge/-TypeScript-black?style=flat-square&logo=typescript)
-![Tailwind](https://img.shields.io/badge/-Tailwind-black?style=flat-square&logo=tailwindcss)
-
-### Tools & Systems
-![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
-![Supabase](https://img.shields.io/badge/-Supabase-black?style=flat-square&logo=supabase)
-![Qdrant](https://img.shields.io/badge/-Qdrant-black?style=flat-square)
-![Tauri](https://img.shields.io/badge/-Tauri-black?style=flat-square)
+| Project | What it is | Evidence |
+|---|---|---|
+| **[RecoverRight](https://github.com/pranavv05/recoverright)** | Autonomous B2B receivables-recovery agent. Diagnoses why an invoice is unpaid, acts only if policy allows. | 0 inappropriate actions and 100% hard-stop block rate on held-out data, both runs. 869 tests. [Demo video](https://www.youtube.com/watch?v=s-3B0S9CR_w) |
+| **[Verax TallyOCR](https://github.com/pranavv05/verax)** | Multi-tenant SaaS for Indian CA firms: OCR, LLM extraction, CA review, TallyPrime XML export. | Postgres row-level-security tenant isolation, queued processing with retries, CI, Docker and Render deploys. [Live](https://ca-saas-platform.vercel.app) |
+| **[QueryFix](https://github.com/pranavv05/QueryFix)** | GitHub PR bot that flags slow and unsafe SQL/JPA queries, including cross-file N+1 patterns. | Deterministic rules (same diff, same findings), about 1,000 tests, strict typing. Pilot stage. |
+| **[BabyCollab](https://github.com/pranavv05/babycollab)** | Student collaboration platform I founded: find teammates, run projects, build a portfolio. | Next.js, Prisma, Clerk, deployed. <!-- TODO: add real user / project counts --> |
+| **[Agentic SDD Platform](https://github.com/pranavv05/agenticsdlc)** | Agents that turn a requirement into approved specs with human gates, then hand off to Claude Code over MCP. Team of 4. | <!-- TODO: state exactly which part you built --> |
 
 ---
 
-## 📊 GitHub Stats
+## I publish what my systems get wrong
 
-![Pranav's GitHub stats](https://github-readme-stats-sigma-five.vercel.app/api?username=pranavv05&show_icons=true&theme=tokyonight)
+Most portfolios only show wins. RecoverRight's README also states:
 
-![Top Langs](https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pranavv05&layout=compact&theme=tokyonight)
+- Cause-diagnosis accuracy is about **45%**. The model is the bottleneck, not the policy engine.
+- **5 of 14** safe invoices were over-escalated to a human. That is the price of failing closed.
+- An early version of the content rules was fitted to held-out text. I disclosed it and rewrote the rules.
+
+If I'm going to run agents on your money, you should see how they fail before you trust them.
 
 ---
 
-⭐️ *Always building. Always shipping.*
+## Stack
+
+Python, FastAPI, Node.js, PostgreSQL (RLS), Redis and BullMQ, React, Next.js, Docker, LLM APIs (Groq, NVIDIA NIM), MCP.
+
+## Experience
+
+- **Gen AI Engineer Intern, Pinhead Analytics.** Production multi-agent voice platform serving Gujarati, Marathi, Kannada and Bengali.
+- **Web Developer Intern, Enjay IT Solutions.**
+
+I speak English, Hindi and Marathi, which is why I care about vernacular-first AI.
+
+---
+
+**Open to AI engineering work and freelance projects.**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/pranavvatsa)
+[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/vatsapranav_)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://pranavv05.vercel.app)
