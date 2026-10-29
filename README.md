@@ -1,4 +1,6 @@
-
+<p align="center">
+  <img src="banner.svg" alt="Pranav Vatsa. AI agents that know when not to act." width="100%"/>
+</p>
 
 I build AI agents for Indian businesses, in places like collections, invoicing and compliance, where one wrong action costs real money.
 
@@ -66,3 +68,4 @@ I speak English, Hindi and Marathi, which is why I care about vernacular-first A
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/pranavvatsa)
 [![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/vatsapranav_)
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://pranavv05.vercel.app)
+[![Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@pranavmmishra2005)
