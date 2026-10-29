@@ -1,14 +1,38 @@
 <p align="center">
-  <img src="banner.jpg" alt="Pranav Vatsa." width="100%"/>
+  <img src="banner.jpg" alt="Pranav Vatsa. AI agents that know when not to act." width="100%"/>
 </p>
 
-I build AI agents for Indian businesses, in places like collections, invoicing and compliance, where one wrong action costs real money.
+<p align="center">
+  I build AI agents for Indian businesses, in collections, invoicing, banking and healthcare,<br/>
+  where one wrong action costs real money.
+</p>
 
-My rule: **the LLM proposes, deterministic code decides.** Every agent I ship has a policy layer the model cannot talk its way past, and an audit trail for every refusal.
+<table align="center">
+  <tr>
+    <td align="center"><h2>0</h2><sub>inappropriate agent actions<br/>across 2 held-out runs</sub></td>
+    <td align="center"><h2>869</h2><sub>tests behind<br/>one agent</sub></td>
+    <td align="center"><h2>5</h2><sub>Indian languages in a<br/>live voice platform</sub></td>
+    <td align="center"><h2>Top 50</h2><sub>of 500 at the<br/>Lyzr Agentathon 2026</sub></td>
+  </tr>
+</table>
 
 ---
 
-## The pattern behind my work
+## What a refusal looks like
+
+A client disputes an invoice. A normal bot sends another reminder. My agent refuses, and writes down why:
+
+```json
+{
+  "decision": "REQUIRE_HUMAN",
+  "reasons": ["dispute_signal_detected_in_client_notes"],
+  "allowed_actions": ["escalate_to_human", "create_dispute_record"],
+  "blocked_actions": ["send_reminder", "send_collection_message", "create_payment_link"],
+  "evaluated_at": "2026-08-22T04:30:00Z"
+}
+```
+
+That is a real decision from [RecoverRight](https://github.com/pranavv05/recoverright)'s audit trail. No model output can loosen it.
 
 ```mermaid
 flowchart LR
@@ -22,46 +46,47 @@ flowchart LR
     F --> G
 ```
 
-This is the architecture of **RecoverRight**. The model can be wrong and the system still holds: across two held-out runs, safety metrics did not move while diagnosis accuracy sat around 45%.
+## How I build
 
----
+**The LLM proposes, code decides.** Every action passes a deterministic policy engine. A model can tighten a decision. It can never loosen one.
 
-## Proof of work
+**Fail closed.** If the model is down or returns garbage, the invoice goes to a human. It does not silently vanish.
 
-| Project | What it is | Evidence |
-|---|---|---|
-| **[RecoverRight](https://github.com/pranavv05/recoverright)** | Autonomous B2B receivables-recovery agent. Diagnoses why an invoice is unpaid, acts only if policy allows. | 0 inappropriate actions and 100% hard-stop block rate on held-out data, both runs. 869 tests. [Demo video](https://www.youtube.com/watch?v=s-3B0S9CR_w) |
-| **[Verax TallyOCR](https://github.com/pranavv05/verax)** | Multi-tenant SaaS for Indian CA firms: OCR, LLM extraction, CA review, TallyPrime XML export. | Postgres row-level-security tenant isolation, queued processing with retries, CI, Docker and Render deploys. [Live](https://ca-saas-platform.vercel.app) |
-| **[QueryFix](https://github.com/pranavv05/QueryFix)** | GitHub PR bot that flags slow and unsafe SQL/JPA queries, including cross-file N+1 patterns. | Deterministic rules (same diff, same findings), about 1,000 tests, strict typing. Pilot stage. |
-| [**BabyCollab**](https://github.com/pranavv05/babycollab) | Student collaboration platform I founded: find teammates, run projects, build a portfolio. | 70+ signups in the first week. Next.js, Prisma, Clerk, deployed. |
-| [**Agentic SDD Platform**](https://github.com/pranavv05/agenticsdlc) | Agents that turn a requirement into approved specs with human gates, then hand off to Claude Code over MCP. | My concept, developed with 3 teammates. |
+**Measure, then admit it.** Safety and accuracy are reported side by side, including where the system is wrong.
 
----
+## Where my agents still fail
 
-## I publish what my systems get wrong
-
-Most portfolios only show wins. RecoverRight's README also states:
+RecoverRight's own README says it plainly:
 
 - Cause-diagnosis accuracy is about **45%**. The model is the bottleneck, not the policy engine.
 - **5 of 14** safe invoices were over-escalated to a human. That is the price of failing closed.
 - An early version of the content rules was fitted to held-out text. I disclosed it and rewrote the rules.
 
-If I'm going to run agents on your money, you should see how they fail before you trust them.
+Safety numbers stayed identical across both runs while the model was wrong more than half the time. That is the point of the design.
 
 ---
 
-## Stack
+## Shipped
 
-Python, FastAPI, Node.js, PostgreSQL (RLS), Redis and BullMQ, React, Next.js, Docker, LLM APIs (Groq, NVIDIA NIM), MCP.
+| | What it is | Proof |
+|---|---|---|
+| **[RecoverRight](https://github.com/pranavv05/recoverright)** | Receivables-recovery agent that acts only when policy allows. Built solo at the Razorpay AI Buildathon 2026. | 0 inappropriate actions, 100% hard-stop block rate on held-out data. [Demo video](https://www.youtube.com/watch?v=s-3B0S9CR_w) |
+| **[Verax TallyOCR](https://github.com/pranavv05/verax)** | B2B SaaS for Indian CA firms: invoices and bank statements to TallyPrime-ready entries in about 30 seconds. | Piloting with 2 CA firms. Postgres row-level-security tenant isolation, CI, Docker. [Live](https://ca-saas-platform.vercel.app) |
+| **[QueryFix](https://github.com/pranavv05/QueryFix)** | Open-source PR bot that flags slow and unsafe SQL/JPA queries, including cross-file N+1. | Same diff, same findings. About 1,000 tests. Static-analysis stage only so far. |
+| **[BabyCollab](https://github.com/pranavv05/babycollab)** | Student platform I founded to find teammates and build a portfolio. | 70+ signups in week one. |
+| **[Agentic SDD Platform](https://github.com/pranavv05/agenticsdlc)** | Agents turn a requirement into approved specs with human sign-off, then hand off to Claude Code over MCP. | My concept, built with 3 teammates. In progress. |
 
-## Experience
+## Where I've worked
 
-- **Gen AI Engineer Intern, Pinhead Analytics.** Production multi-agent voice platform serving Gujarati, Marathi, Kannada and Bengali.
-- **Web Developer Intern, Enjay IT Solutions.**
-
-I speak English, Hindi and Marathi, which is why I care about vernacular-first AI.
+- **Finzly (BankOS), Aug to Oct 2026.** Built QueryGuard, an AI PR reviewer the team adopted over its existing tool: 50+ PRs reviewed, 30 to 40% cheaper. Also ran a 9-week AI course for the engineering team.
+- **Pinhead Analytics, two terms.** Shipped healthcare voice agents that take live patient calls, expanded from English-only to 5 Indian languages. Rehired for a second term.
+- **Enjay IT Solutions, 2024.** React and MERN modules, 28% faster page loads.
 
 ---
+
+**Stack:** Python, TypeScript, FastAPI, Node.js, PostgreSQL, Redis, Qdrant, LangGraph, MCP, LiveKit, Sarvam AI, Docker.
+
+B.Tech CSE at M S Ramaiah University of Applied Sciences, Bengaluru. I speak English, Hindi and Marathi, which is why I care about vernacular-first AI.
 
 **Open to AI engineering work and freelance projects.**
 
